@@ -226,112 +226,6 @@ a {
   padding: 22px 20px 0;
 }
 
-.desktop-welcome {
-  position: absolute;
-  top: 76px;
-  right: 56px;
-  width: min(420px, calc(100vw - 560px));
-  min-width: 320px;
-  padding: 1.35rem;
-  border-radius: 28px;
-  background: rgba(9, 16, 30, 0.34);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(22px);
-  z-index: 2;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-}
-
-body.light-theme .desktop-welcome {
-  background: rgba(255, 255, 255, 0.44);
-  border-color: rgba(92, 117, 154, 0.14);
-  color: #1d3047;
-}
-
-.desktop-welcome-kicker {
-  margin: 0 0 0.8rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.74);
-}
-
-body.light-theme .desktop-welcome-kicker {
-  color: #516781;
-}
-
-.desktop-welcome h2 {
-  margin: 0;
-  font-family: "SF Pro Display", "Inter", sans-serif;
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-  line-height: 1;
-}
-
-.desktop-welcome-copy {
-  margin: 0.9rem 0 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-body.light-theme .desktop-welcome-copy {
-  color: #52647b;
-}
-
-.desktop-welcome-actions,
-.desktop-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.desktop-action {
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border-radius: 999px;
-  padding: 0.72rem 0.95rem;
-  cursor: pointer;
-}
-
-body.light-theme .desktop-action {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(92, 117, 154, 0.12);
-  color: #20314a;
-}
-
-.desktop-metrics {
-  margin-top: 1rem;
-}
-
-.desktop-metrics article {
-  flex: 1;
-  min-width: 100px;
-  padding: 0.9rem;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-body.light-theme .desktop-metrics article {
-  background: rgba(255, 255, 255, 0.62);
-  border-color: rgba(92, 117, 154, 0.1);
-}
-
-.desktop-metrics strong {
-  display: block;
-  font-size: 1.35rem;
-}
-
-.desktop-metrics span {
-  display: block;
-  margin-top: 0.28rem;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.74);
-}
-
-body.light-theme .desktop-metrics span {
-  color: #657790;
-}
-
 .menu-bar {
   position: relative;
   z-index: 8;
@@ -422,10 +316,11 @@ body.light-theme .theme-toggle-sun {
 
 .desktop-icons {
   position: absolute;
-  top: 26px;
-  left: 22px;
+  top: 18px;
+  right: 24px;
   display: grid;
-  gap: 0.9rem;
+  justify-items: end;
+  gap: 1rem;
   z-index: 2;
 }
 
@@ -2035,13 +1930,6 @@ body.light-theme .mobile-project-list a {
 @media (max-width: 1200px) {
   .app-window {
     min-width: 280px;
-  }
-
-  .desktop-welcome {
-    top: auto;
-    bottom: 120px;
-    right: 22px;
-    width: min(420px, calc(100vw - 80px));
   }
 
   .finder-metadata,

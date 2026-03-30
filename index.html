@@ -82,37 +82,9 @@
           </button>
         </div>
 
-        <section class="desktop-welcome" aria-label="Desktop introduction">
-          <p class="desktop-welcome-kicker">Portfolio Desktop</p>
-          <h2>Anjali Prajapati builds thoughtful products across frontend feel, backend structure, and user clarity.</h2>
-          <p class="desktop-welcome-copy">
-            Explore the dock like a real workspace: Finder for projects, Photo Booth for profile,
-            Call and Mail for contact, WhatsApp-style chat for quick conversation, and Terminal for command access.
-          </p>
-          <div class="desktop-welcome-actions">
-            <button class="desktop-action" type="button" data-open="projects-window">Open projects</button>
-            <button class="desktop-action" type="button" data-open="profile-window">Open profile</button>
-            <button class="desktop-action" type="button" data-open="terminal-window">Open terminal</button>
-          </div>
-          <div class="desktop-metrics">
-            <article>
-              <strong>500+</strong>
-              <span>DSA problems solved</span>
-            </article>
-            <article>
-              <strong>4</strong>
-              <span>Core case studies</span>
-            </article>
-            <article>
-              <strong>2</strong>
-              <span>Hackathon highlights</span>
-            </article>
-          </div>
-        </section>
-
         <div class="window-layer" id="window-layer">
           <article
-            class="app-window finder-window is-open"
+            class="app-window finder-window hidden-window"
             id="projects-window"
             data-window
             data-app="projects"
@@ -258,7 +230,7 @@
           </article>
 
           <article
-            class="app-window safari-window is-open"
+            class="app-window safari-window hidden-window"
             id="rewear-window"
             data-window
             data-app="rewear"
@@ -733,7 +705,7 @@
       </main>
 
       <div class="dock" id="dock">
-        <button class="dock-item active" type="button" data-open="projects-window" aria-label="Open Projects">
+        <button class="dock-item" type="button" data-open="projects-window" aria-label="Open Projects">
           <span class="dock-icon finder-art"></span>
           <span class="dock-label">Projects</span>
         </button>
