@@ -26,7 +26,7 @@
         <span>Portfolio OS</span>
       </div>
       <div class="lock-content">
-        <div class="lock-avatar">AP</div>
+        <div class="lock-avatar lock-avatar-name">Anjali Prajapati</div>
         <p class="lock-role">Software Developer</p>
         <h1 id="lock-time">10:24</h1>
         <p class="lock-name">Anjali Prajapati</p>
@@ -50,6 +50,10 @@
           <span>Window</span>
         </div>
         <div class="menu-right">
+          <button class="theme-toggle" id="desktop-theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="theme-toggle-dot"></span>
+            <span id="desktop-theme-label">Dark</span>
+          </button>
           <span>anjaliiprajapati04@gmail.com</span>
           <span id="menu-date">Mon 30 Mar</span>
           <span id="menu-time">10:24</span>
@@ -63,11 +67,11 @@
             <span>About Me</span>
           </button>
           <button class="desktop-icon" type="button" data-open="rewear-window">
-            <span class="desktop-icon-art safari-art"></span>
+            <span class="desktop-icon-art rewear-art"></span>
             <span>ReWear</span>
           </button>
           <button class="desktop-icon" type="button" data-open="primetrade-window">
-            <span class="desktop-icon-art safari-art"></span>
+            <span class="desktop-icon-art primetrade-art"></span>
             <span>PrimeTrade</span>
           </button>
           <button class="desktop-icon" type="button" data-open="mail-window">
@@ -79,6 +83,34 @@
             <span>Resume.pdf</span>
           </button>
         </div>
+
+        <section class="desktop-welcome" aria-label="Desktop introduction">
+          <p class="desktop-welcome-kicker">Portfolio Desktop</p>
+          <h2>Anjali Prajapati builds thoughtful products across frontend feel, backend structure, and user clarity.</h2>
+          <p class="desktop-welcome-copy">
+            Explore the desktop like a workspace: open Finder to know me, Safari windows to read projects,
+            Mail to reach out, and Quick Look to preview my resume.
+          </p>
+          <div class="desktop-welcome-actions">
+            <button class="desktop-action" type="button" data-open="finder-window">Open profile</button>
+            <button class="desktop-action" type="button" data-open="rewear-window">Open ReWear</button>
+            <button class="desktop-action" type="button" data-open="mail-window">Open Mail</button>
+          </div>
+          <div class="desktop-metrics">
+            <article>
+              <strong>500+</strong>
+              <span>DSA problems solved</span>
+            </article>
+            <article>
+              <strong>4</strong>
+              <span>Core case studies</span>
+            </article>
+            <article>
+              <strong>2</strong>
+              <span>Hackathon highlights</span>
+            </article>
+          </div>
+        </section>
 
         <div class="window-layer" id="window-layer">
           <article
@@ -602,19 +634,19 @@
           <span class="dock-label">Finder</span>
         </button>
         <button class="dock-item active" type="button" data-open="rewear-window" aria-label="Open ReWear">
-          <span class="dock-icon safari-art"></span>
+          <span class="dock-icon rewear-art"></span>
           <span class="dock-label">ReWear</span>
         </button>
         <button class="dock-item" type="button" data-open="primetrade-window" aria-label="Open PrimeTrade">
-          <span class="dock-icon safari-art alt"></span>
+          <span class="dock-icon primetrade-art"></span>
           <span class="dock-label">PrimeTrade</span>
         </button>
         <button class="dock-item" type="button" data-open="auction-window" aria-label="Open Live Auction">
-          <span class="dock-icon safari-art alt-two"></span>
+          <span class="dock-icon auction-art"></span>
           <span class="dock-label">Auction</span>
         </button>
         <button class="dock-item" type="button" data-open="rating-window" aria-label="Open Content Rating">
-          <span class="dock-icon terminal-art"></span>
+          <span class="dock-icon rating-art"></span>
           <span class="dock-label">Rating</span>
         </button>
         <button class="dock-item" type="button" data-open="mail-window" aria-label="Open Mail">
@@ -631,7 +663,13 @@
 
   <section class="mobile-layout">
     <header class="mobile-hero">
-      <p class="mobile-eyebrow">Software Developer • Haridwar, India</p>
+      <div class="mobile-hero-top">
+        <p class="mobile-eyebrow">Software Developer • Haridwar, India</p>
+        <button class="theme-toggle mobile-theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle-dot"></span>
+          <span id="mobile-theme-label">Dark</span>
+        </button>
+      </div>
       <h1>Anjali Prajapati</h1>
       <p class="mobile-lead">
         I build full-stack products with clean backend structure, clear UI, and strong product feel.

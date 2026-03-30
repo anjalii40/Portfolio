@@ -8,6 +8,10 @@ const lockDate = document.getElementById("lock-date");
 const windowLayer = document.getElementById("window-layer");
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
+const desktopThemeToggle = document.getElementById("desktop-theme-toggle");
+const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+const desktopThemeLabel = document.getElementById("desktop-theme-label");
+const mobileThemeLabel = document.getElementById("mobile-theme-label");
 const dockItems = document.querySelectorAll(".dock-item");
 const openTriggers = document.querySelectorAll("[data-open]");
 const windows = Array.from(document.querySelectorAll("[data-window]"));
@@ -18,6 +22,26 @@ let highestZIndex = 20;
 let dragState = null;
 
 const isDesktopMode = () => window.innerWidth > 920;
+
+const getSavedTheme = () => localStorage.getItem("portfolio-theme") || "dark";
+
+const applyTheme = (theme) => {
+  document.body.classList.toggle("light-theme", theme === "light");
+
+  if (desktopThemeLabel) {
+    desktopThemeLabel.textContent = theme === "light" ? "Light" : "Dark";
+  }
+
+  if (mobileThemeLabel) {
+    mobileThemeLabel.textContent = theme === "light" ? "Light" : "Dark";
+  }
+};
+
+const toggleTheme = () => {
+  const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+  localStorage.setItem("portfolio-theme", nextTheme);
+  applyTheme(nextTheme);
+};
 
 const setClock = () => {
   const now = new Date();
@@ -161,6 +185,7 @@ const resetDesktopStateForMobile = () => {
 
 setClock();
 setInterval(setClock, 30000);
+applyTheme(getSavedTheme());
 
 if (unlockButton) {
   unlockButton.addEventListener("click", startDesktop);
@@ -171,6 +196,14 @@ if (menuToggle && nav) {
     const isOpen = nav.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
+}
+
+if (desktopThemeToggle) {
+  desktopThemeToggle.addEventListener("click", toggleTheme);
+}
+
+if (mobileThemeToggle) {
+  mobileThemeToggle.addEventListener("click", toggleTheme);
 }
 
 openTriggers.forEach((trigger) => {
