@@ -105,6 +105,45 @@ img {
   backdrop-filter: blur(18px);
 }
 
+.hero-panel,
+.narrative-section,
+.work-section,
+.about-section,
+.craft-section,
+.contact-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.narrative-section,
+.work-section,
+.about-section,
+.craft-section {
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
+}
+
+.narrative-section::before,
+.work-section::before,
+.about-section::before,
+.craft-section::before,
+.contact-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.narrative-section > *,
+.work-section > *,
+.about-section > *,
+.craft-section > *,
+.contact-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
 .topbar {
   display: flex;
   align-items: center;
@@ -169,6 +208,16 @@ img {
   gap: 1.5rem;
   padding: 1.4rem;
   min-height: 72vh;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(120, 240, 217, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(255, 141, 92, 0.12), transparent 28%);
+  pointer-events: none;
 }
 
 .hero-copy,
@@ -396,6 +445,19 @@ h3 {
   align-items: start;
 }
 
+.narrative-section {
+  background:
+    linear-gradient(135deg, rgba(41, 16, 39, 0.52), rgba(8, 14, 23, 0.2) 42%),
+    linear-gradient(180deg, rgba(18, 10, 28, 0.92), rgba(10, 18, 31, 0.72));
+  border: 1px solid rgba(255, 141, 92, 0.14);
+}
+
+.narrative-section::before {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(255, 141, 92, 0.18), transparent 22%),
+    radial-gradient(circle at 82% 74%, rgba(255, 89, 136, 0.14), transparent 24%);
+}
+
 .narrative-intro {
   position: sticky;
   top: 6rem;
@@ -437,6 +499,21 @@ h3 {
 .section-heading {
   max-width: 760px;
   margin-bottom: 2rem;
+}
+
+.work-section {
+  background:
+    linear-gradient(180deg, rgba(7, 16, 28, 0.84), rgba(5, 10, 18, 0.94));
+  border: 1px solid rgba(76, 168, 255, 0.18);
+}
+
+.work-section::before {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(76, 168, 255, 0.16), transparent 22%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: auto, 74px 74px, 74px 74px;
+  mask-image: linear-gradient(180deg, black, rgba(0, 0, 0, 0.26));
 }
 
 .projects-grid,
@@ -499,6 +576,19 @@ h3 {
   gap: 1rem;
 }
 
+.about-section {
+  background:
+    linear-gradient(135deg, rgba(255, 141, 92, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(24, 16, 8, 0.88), rgba(12, 17, 23, 0.9));
+  border: 1px solid rgba(255, 184, 121, 0.16);
+}
+
+.about-section::before {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255, 211, 134, 0.16), transparent 22%),
+    linear-gradient(120deg, transparent 0 42%, rgba(255, 255, 255, 0.03) 42% 44%, transparent 44% 100%);
+}
+
 .about-copy {
   position: sticky;
   top: 6rem;
@@ -521,6 +611,35 @@ h3 {
 
 .skills-board {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.craft-section {
+  background:
+    linear-gradient(180deg, rgba(8, 16, 32, 0.92), rgba(6, 14, 29, 0.82)),
+    linear-gradient(90deg, rgba(120, 240, 217, 0.04), transparent);
+  border: 1px solid rgba(120, 240, 217, 0.16);
+}
+
+.craft-section::before {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(120, 240, 217, 0.16), transparent 20%),
+    radial-gradient(circle at 88% 78%, rgba(76, 168, 255, 0.16), transparent 24%);
+}
+
+.skill-column:nth-child(1) {
+  border-top: 3px solid rgba(120, 240, 217, 0.58);
+}
+
+.skill-column:nth-child(2) {
+  border-top: 3px solid rgba(76, 168, 255, 0.58);
+}
+
+.skill-column:nth-child(3) {
+  border-top: 3px solid rgba(255, 141, 92, 0.58);
+}
+
+.skill-column:nth-child(4) {
+  border-top: 3px solid rgba(255, 89, 136, 0.58);
 }
 
 .achievement-band {
@@ -549,6 +668,19 @@ h3 {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 1rem;
   margin-bottom: 3rem;
+}
+
+.contact-shell {
+  background:
+    linear-gradient(135deg, rgba(76, 168, 255, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(8, 16, 32, 0.95), rgba(15, 11, 27, 0.92));
+  border: 1px solid rgba(160, 120, 255, 0.16);
+}
+
+.contact-shell::before {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(160, 120, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 18% 82%, rgba(120, 240, 217, 0.12), transparent 22%);
 }
 
 .contact-links {
@@ -705,6 +837,13 @@ h3 {
 
   .hero {
     min-height: auto;
+  }
+
+  .narrative-section,
+  .work-section,
+  .about-section,
+  .craft-section {
+    padding: 1.4rem;
   }
 
   .narrative-intro,
