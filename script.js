@@ -21,6 +21,20 @@ const terminalOutput = document.getElementById("terminal-output");
 let highestZIndex = 20;
 let dragState = null;
 
+const WINDOW_LAYOUTS = {
+  projects: { width: 940, height: 620, topOffset: -10 },
+  profile: { width: 760, height: 560, topOffset: 0 },
+  contact: { width: 760, height: 480, topOffset: 8 },
+  rewear: { width: 980, height: 650, topOffset: 0 },
+  primetrade: { width: 980, height: 650, topOffset: 6 },
+  auction: { width: 960, height: 630, topOffset: 10 },
+  rating: { width: 960, height: 630, topOffset: 8 },
+  mail: { width: 980, height: 650, topOffset: 0 },
+  chat: { width: 580, height: 610, topOffset: 18 },
+  terminal: { width: 980, height: 620, topOffset: 10 },
+  resume: { width: 760, height: 620, topOffset: 4 },
+};
+
 const isDesktopMode = () => window.innerWidth > 920;
 
 const getSavedTheme = () => localStorage.getItem("portfolio-theme") || "dark";
@@ -79,25 +93,154 @@ const focusWindow = (windowEl) => {
   windowEl.style.zIndex = String(highestZIndex);
 };
 
-const openWindow = (windowId) => {
+const getLaunchSource = (windowId, preferredEl) =>
+  preferredEl ||
+  document.querySelector(`.dock-item[data-open="${windowId}"]`) ||
+  document.querySelector(`.desktop-icon[data-open="${windowId}"]`);
+
+const applyWindowLayout = (windowEl) => {
+  if (!isDesktopMode() || !windowLayer) return;
+
+  const layout = WINDOW_LAYOUTS[windowEl.dataset.app];
+  if (!layout) return;
+
+  const stageBounds = windowLayer.getBoundingClientRect();
+  const horizontalPadding = 34;
+  const verticalPadding = 22;
+  const maxWidth = Math.max(320, stageBounds.width - horizontalPadding * 2);
+  const maxHeight = Math.max(280, stageBounds.height - verticalPadding * 2);
+  const width = Math.min(layout.width, maxWidth);
+  const height = Math.min(layout.height, maxHeight);
+  const left = Math.max(horizontalPadding, (stageBounds.width - width) / 2);
+  const centeredTop = (stageBounds.height - height) / 2 + (layout.topOffset || 0);
+  const top = Math.min(
+    Math.max(verticalPadding, centeredTop),
+    Math.max(verticalPadding, stageBounds.height - height - verticalPadding)
+  );
+
+  windowEl.style.width = `${Math.round(width)}px`;
+  windowEl.style.height = `${Math.round(height)}px`;
+  windowEl.style.left = `${Math.round(left)}px`;
+  windowEl.style.top = `${Math.round(top)}px`;
+};
+
+const animateWindowIn = (windowEl, sourceEl) => {
+  if (!windowLayer || !isDesktopMode()) return;
+
+  windowEl.getAnimations().forEach((animation) => animation.cancel());
+
+  const stageBounds = windowLayer.getBoundingClientRect();
+  const targetBounds = windowEl.getBoundingClientRect();
+  const sourceBounds = sourceEl?.getBoundingClientRect();
+  const sourceX = sourceBounds
+    ? sourceBounds.left - stageBounds.left + sourceBounds.width / 2
+    : stageBounds.width / 2;
+  const sourceY = sourceBounds
+    ? sourceBounds.top - stageBounds.top + sourceBounds.height / 2
+    : stageBounds.height - 32;
+  const targetX = targetBounds.left - stageBounds.left + targetBounds.width / 2;
+  const targetY = targetBounds.top - stageBounds.top + targetBounds.height / 2;
+  const deltaX = sourceX - targetX;
+  const deltaY = sourceY - targetY;
+
+  windowEl.animate(
+    [
+      {
+        opacity: 0.22,
+        transform: `translate(${deltaX}px, ${deltaY}px) scale(0.24)`,
+        filter: "blur(10px)",
+      },
+      {
+        opacity: 1,
+        transform: "translate(0px, 0px) scale(1)",
+        filter: "blur(0px)",
+      },
+    ],
+    {
+      duration: 340,
+      easing: "cubic-bezier(0.18, 0.88, 0.22, 1)",
+    }
+  );
+};
+
+const animateWindowOut = (windowEl, mode = "close") => {
+  if (!windowLayer || !isDesktopMode()) return Promise.resolve();
+
+  windowEl.getAnimations().forEach((animation) => animation.cancel());
+
+  const stageBounds = windowLayer.getBoundingClientRect();
+  const targetBounds = windowEl.getBoundingClientRect();
+  const dockTarget = document.querySelector(`.dock-item[data-open="${windowEl.id}"]`);
+  const dockBounds = dockTarget?.getBoundingClientRect();
+  const targetX = targetBounds.left - stageBounds.left + targetBounds.width / 2;
+  const targetY = targetBounds.top - stageBounds.top + targetBounds.height / 2;
+  const dockX = dockBounds
+    ? dockBounds.left - stageBounds.left + dockBounds.width / 2
+    : stageBounds.width / 2;
+  const dockY = dockBounds
+    ? dockBounds.top - stageBounds.top + dockBounds.height / 2
+    : stageBounds.height + 24;
+  const deltaX = dockX - targetX;
+  const deltaY = dockY - targetY;
+
+  const frames =
+    mode === "minimize"
+      ? [
+          { opacity: 1, transform: "translate(0px, 0px) scale(1)", filter: "blur(0px)" },
+          {
+            opacity: 0.2,
+            transform: `translate(${deltaX}px, ${deltaY}px) scale(0.18)`,
+            filter: "blur(8px)",
+          },
+        ]
+      : [
+          { opacity: 1, transform: "translate(0px, 0px) scale(1)", filter: "blur(0px)" },
+          { opacity: 0, transform: "translate(0px, 12px) scale(0.92)", filter: "blur(4px)" },
+        ];
+
+  return new Promise((resolve) => {
+    const animation = windowEl.animate(frames, {
+      duration: mode === "minimize" ? 280 : 220,
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+      fill: "forwards",
+    });
+
+    animation.addEventListener("finish", resolve, { once: true });
+    animation.addEventListener("cancel", resolve, { once: true });
+  });
+};
+
+const openWindow = (windowId, openerEl) => {
   const target = document.getElementById(windowId);
   if (!target) return;
 
+  if (!target.classList.contains("hidden-window")) {
+    focusWindow(target);
+    syncDockState();
+    return;
+  }
+
+  applyWindowLayout(target);
   target.classList.remove("hidden-window");
   focusWindow(target);
   syncDockState();
+  animateWindowIn(target, getLaunchSource(windowId, openerEl));
 
   if (windowId === "terminal-window" && terminalInput) {
     window.setTimeout(() => terminalInput.focus(), 50);
   }
 };
 
-const closeWindow = (windowId) => {
+const closeWindow = async (windowId, mode = "close") => {
   const target = document.getElementById(windowId);
   if (!target) return;
 
+  await animateWindowOut(target, mode);
   target.classList.add("hidden-window");
   target.classList.remove("is-focused");
+  target.style.opacity = "";
+  target.style.transform = "";
+  target.style.filter = "";
   syncDockState();
 };
 
@@ -181,8 +324,16 @@ const endDrag = () => {
 };
 
 const resetDesktopStateForMobile = () => {
-  if (isDesktopMode()) return;
-  endDrag();
+  if (!isDesktopMode()) {
+    endDrag();
+    return;
+  }
+
+  windows.forEach((windowEl) => {
+    if (!windowEl.classList.contains("hidden-window")) {
+      applyWindowLayout(windowEl);
+    }
+  });
 };
 
 const escapeHtml = (value) =>
@@ -394,7 +545,7 @@ document.addEventListener("click", (event) => {
   const opener = event.target.closest("[data-open]");
   if (opener) {
     const targetId = opener.dataset.open;
-    if (targetId) openWindow(targetId);
+    if (targetId) openWindow(targetId, opener);
   }
 
   const control = event.target.closest("[data-action]");
@@ -404,7 +555,7 @@ document.addEventListener("click", (event) => {
   const action = control.dataset.action;
 
   if (action === "close" || action === "minimize") {
-    closeWindow(target);
+    closeWindow(target, action);
   }
 });
 

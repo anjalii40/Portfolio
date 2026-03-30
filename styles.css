@@ -728,6 +728,8 @@ body.light-theme .desktop-icon span:last-child {
   overflow: hidden;
   backdrop-filter: blur(24px);
   z-index: 3;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
 }
 
 .app-window.hidden-window {
@@ -1620,6 +1622,8 @@ body.light-theme .chat-body {
   gap: 0.5rem;
   cursor: pointer;
   color: #fff;
+  transform-origin: center bottom;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1);
 }
 
 .dock-icon {
@@ -1645,6 +1649,22 @@ body.light-theme .chat-body {
 
 .dock-item:hover .dock-label {
   opacity: 1;
+}
+
+.dock:hover .dock-item {
+  transform: scale(0.96);
+}
+
+.dock:hover .dock-item:hover {
+  transform: translateY(-10px) scale(1.22);
+}
+
+.dock:hover .dock-item:hover + .dock-item {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.dock:hover .dock-item:has(+ .dock-item:hover) {
+  transform: translateY(-5px) scale(1.1);
 }
 
 body.light-theme .dock {
