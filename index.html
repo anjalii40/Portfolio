@@ -6,376 +6,701 @@
   <title>Anjali Prajapati | Portfolio</title>
   <meta
     name="description"
-    content="Portfolio of Anjali Prajapati, a software developer building bold interfaces, scalable backend systems, and polished product experiences."
+    content="Mac-inspired portfolio of Anjali Prajapati, a software developer building polished interfaces, full-stack systems, and product-minded experiences."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=SF+Pro+Display:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="scroll-progress" aria-hidden="true">
-    <span id="scroll-progress-bar"></span>
+  <div class="desktop-only">
+    <section class="lock-screen" id="lock-screen">
+      <div class="lock-backdrop"></div>
+      <div class="lock-overlay"></div>
+      <div class="lock-status">
+        <span id="lock-date">Monday, March 30</span>
+        <span>Portfolio OS</span>
+      </div>
+      <div class="lock-content">
+        <div class="lock-avatar">AP</div>
+        <p class="lock-role">Software Developer</p>
+        <h1 id="lock-time">10:24</h1>
+        <p class="lock-name">Anjali Prajapati</p>
+        <button class="unlock-button" id="unlock-button" type="button">
+          Click to enter desktop
+        </button>
+      </div>
+    </section>
+
+    <section class="desktop-shell hidden" id="desktop-shell" aria-label="Portfolio desktop">
+      <div class="desktop-wallpaper"></div>
+
+      <header class="menu-bar">
+        <div class="menu-left">
+          <span class="apple-mark">&#63743;</span>
+          <strong>Anjali OS</strong>
+          <span>Finder</span>
+          <span>File</span>
+          <span>Edit</span>
+          <span>View</span>
+          <span>Window</span>
+        </div>
+        <div class="menu-right">
+          <span>anjaliiprajapati04@gmail.com</span>
+          <span id="menu-date">Mon 30 Mar</span>
+          <span id="menu-time">10:24</span>
+        </div>
+      </header>
+
+      <main class="desktop-stage" id="desktop-stage">
+        <div class="desktop-icons">
+          <button class="desktop-icon" type="button" data-open="finder-window">
+            <span class="desktop-icon-art folder-art"></span>
+            <span>About Me</span>
+          </button>
+          <button class="desktop-icon" type="button" data-open="rewear-window">
+            <span class="desktop-icon-art safari-art"></span>
+            <span>ReWear</span>
+          </button>
+          <button class="desktop-icon" type="button" data-open="primetrade-window">
+            <span class="desktop-icon-art safari-art"></span>
+            <span>PrimeTrade</span>
+          </button>
+          <button class="desktop-icon" type="button" data-open="mail-window">
+            <span class="desktop-icon-art mail-art"></span>
+            <span>Contact</span>
+          </button>
+          <button class="desktop-icon" type="button" data-open="resume-window">
+            <span class="desktop-icon-art preview-art"></span>
+            <span>Resume.pdf</span>
+          </button>
+        </div>
+
+        <div class="window-layer" id="window-layer">
+          <article
+            class="app-window finder-window is-open"
+            id="finder-window"
+            data-window
+            data-app="finder"
+            style="top: 92px; left: 54px; width: 430px; height: 560px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="finder-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="finder-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Finder</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">Portfolio</span>
+              </div>
+            </header>
+            <div class="window-body finder-body">
+              <aside class="finder-sidebar">
+                <div class="sidebar-section">
+                  <p class="sidebar-label">Favorites</p>
+                  <button class="sidebar-item active" type="button" data-finder-panel="profile">Profile</button>
+                  <button class="sidebar-item" type="button" data-finder-panel="skills">Skills</button>
+                  <button class="sidebar-item" type="button" data-finder-panel="wins">Highlights</button>
+                  <button class="sidebar-item" type="button" data-finder-panel="projects">Projects</button>
+                </div>
+              </aside>
+              <div class="finder-content">
+                <section class="finder-panel is-active" data-finder-view="profile">
+                  <p class="finder-eyebrow">Profile</p>
+                  <h2>Anjali Prajapati</h2>
+                  <p class="finder-lead">
+                    Software developer focused on polished frontend feel, solid backend systems, and
+                    product experiences that actually hold together.
+                  </p>
+                  <div class="finder-metadata">
+                    <div>
+                      <span>Location</span>
+                      <strong>Haridwar, India</strong>
+                    </div>
+                    <div>
+                      <span>Education</span>
+                      <strong>NIT Agartala • B.Tech EE</strong>
+                    </div>
+                    <div>
+                      <span>Focus</span>
+                      <strong>Full-stack systems + UI craft</strong>
+                    </div>
+                  </div>
+                  <div class="finder-note">
+                    <p class="finder-note-title">What I care about</p>
+                    <p>
+                      I like products that feel disciplined under the hood and expressive on the
+                      surface. My work spans realtime systems, admin dashboards, recommendation
+                      logic, and technical storytelling.
+                    </p>
+                  </div>
+                </section>
+
+                <section class="finder-panel" data-finder-view="skills">
+                  <p class="finder-eyebrow">Skills</p>
+                  <div class="skill-stack-grid">
+                    <article class="skill-stack-card">
+                      <span>Frontend</span>
+                      <strong>React, Next.js, Tailwind, HTML, CSS, JavaScript</strong>
+                    </article>
+                    <article class="skill-stack-card">
+                      <span>Backend</span>
+                      <strong>Node.js, Express, Go, REST APIs, JWT, Prisma</strong>
+                    </article>
+                    <article class="skill-stack-card">
+                      <span>Data</span>
+                      <strong>MongoDB, PostgreSQL, MySQL, Mongoose</strong>
+                    </article>
+                    <article class="skill-stack-card">
+                      <span>Infra</span>
+                      <strong>Docker, Render, Vercel, GitHub, Postman</strong>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="finder-panel" data-finder-view="wins">
+                  <p class="finder-eyebrow">Highlights</p>
+                  <div class="highlight-list">
+                    <article>
+                      <strong>500+</strong>
+                      <p>DSA problems solved across LeetCode, GeeksforGeeks, and Codeforces.</p>
+                    </article>
+                    <article>
+                      <strong>Adobe India Hackathon 2025</strong>
+                      <p>Selected for Round 2 from 250,000+ participants.</p>
+                    </article>
+                    <article>
+                      <strong>Odoo Hackathon 2025</strong>
+                      <p>Finalist selection in the top 300 out of 19,000+ teams.</p>
+                    </article>
+                    <article>
+                      <strong>TakeUForward</strong>
+                      <p>Technical Content Writer Intern, revamping 200+ DSA articles.</p>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="finder-panel" data-finder-view="projects">
+                  <p class="finder-eyebrow">Projects</p>
+                  <div class="finder-project-list">
+                    <button class="finder-project-item" type="button" data-open="rewear-window">
+                      <strong>ReWear</strong>
+                      <span>Circular-fashion exchange platform</span>
+                    </button>
+                    <button class="finder-project-item" type="button" data-open="primetrade-window">
+                      <strong>PrimeTrade</strong>
+                      <span>JWT auth, RBAC, admin dashboard, API docs</span>
+                    </button>
+                    <button class="finder-project-item" type="button" data-open="auction-window">
+                      <strong>Live Auction</strong>
+                      <span>Realtime bidding with synchronized timers</span>
+                    </button>
+                    <button class="finder-project-item" type="button" data-open="rating-window">
+                      <strong>Content Rating</strong>
+                      <span>Go + PostgreSQL recommendation pipeline</span>
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window safari-window is-open"
+            id="rewear-window"
+            data-window
+            data-app="rewear"
+            style="top: 128px; left: 330px; width: 720px; height: 560px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="rewear-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="rewear-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Safari</div>
+              <div class="safari-toolbar">
+                <span class="safari-pill">rewear.case-study</span>
+              </div>
+            </header>
+            <div class="window-body safari-body">
+              <div class="browser-chrome">
+                <span class="browser-tab active">ReWear</span>
+                <span class="browser-address">https://portfolio.local/rewear</span>
+              </div>
+              <div class="browser-page">
+                <section class="project-hero project-hero-rewear">
+                  <span class="project-badge">Featured Build</span>
+                  <h2>ReWear</h2>
+                  <p>
+                    Circular-fashion platform designed for swapping and redeeming clothes through a
+                    point-based system, with admin moderation and a stronger product flow than a
+                    usual hackathon build.
+                  </p>
+                  <div class="project-tags">
+                    <span>HTML</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Cloudinary</span>
+                  </div>
+                </section>
+                <div class="project-grid">
+                  <article class="project-panel">
+                    <span class="panel-kicker">Problem</span>
+                    <p>
+                      Clothing exchange platforms often feel messy. ReWear focused on making the
+                      swap and redeem journey feel structured, fair, and trustworthy.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">My work</span>
+                    <p>
+                      Authentication, image upload flow, swap/redeem mechanics, and REST APIs that
+                      supported both user and admin actions.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Highlights</span>
+                    <ul>
+                      <li>Point-based redemption flow</li>
+                      <li>Admin moderation dashboard</li>
+                      <li>Cloudinary-backed media uploads</li>
+                      <li>Team collaboration with structured reviews</li>
+                    </ul>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Takeaway</span>
+                    <p>
+                      Even in hackathons, strong API structure and thoughtful user journeys make the
+                      final product feel much more complete.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window safari-window hidden-window"
+            id="primetrade-window"
+            data-window
+            data-app="primetrade"
+            style="top: 148px; left: 410px; width: 700px; height: 540px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="primetrade-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="primetrade-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Safari</div>
+              <div class="safari-toolbar">
+                <span class="safari-pill">primetrade.case-study</span>
+              </div>
+            </header>
+            <div class="window-body safari-body">
+              <div class="browser-chrome">
+                <span class="browser-tab active">PrimeTrade</span>
+                <span class="browser-address">https://portfolio.local/primetrade</span>
+              </div>
+              <div class="browser-page">
+                <section class="project-hero project-hero-prime">
+                  <span class="project-badge">Backend + Product UI</span>
+                  <h2>PrimeTrade</h2>
+                  <p>
+                    Secure task management platform with JWT auth, RBAC controls, Swagger docs, and
+                    a polished dashboard that made an assessment feel like a real product.
+                  </p>
+                  <div class="project-tags">
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>Prisma</span>
+                    <span>PostgreSQL</span>
+                    <span>Swagger</span>
+                  </div>
+                </section>
+                <div class="project-grid">
+                  <article class="project-panel">
+                    <span class="panel-kicker">Problem</span>
+                    <p>
+                      Go beyond technical correctness and build a task platform that also feels
+                      deliberate in copy, layout, and operational flow.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Approach</span>
+                    <p>
+                      Routes, controllers, middleware, validation, and Prisma boundaries kept the
+                      architecture clean while supporting admin-only behaviors and secure APIs.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Key decisions</span>
+                    <ul>
+                      <li>JWT auth and bcrypt password hashing</li>
+                      <li>Role-aware admin endpoints</li>
+                      <li>Swagger docs for evaluator experience</li>
+                      <li>Pagination and clean state grouping</li>
+                    </ul>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Outcome</span>
+                    <p>
+                      A deployable full-stack product with strong defaults, docs, and a dashboard
+                      experience that felt much more polished than standard CRUD demos.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window safari-window hidden-window"
+            id="auction-window"
+            data-window
+            data-app="auction"
+            style="top: 172px; left: 450px; width: 680px; height: 520px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="auction-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="auction-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Safari</div>
+              <div class="safari-toolbar">
+                <span class="safari-pill">live-auction.case-study</span>
+              </div>
+            </header>
+            <div class="window-body safari-body">
+              <div class="browser-chrome">
+                <span class="browser-tab active">Live Auction</span>
+                <span class="browser-address">https://portfolio.local/live-auction</span>
+              </div>
+              <div class="browser-page">
+                <section class="project-hero project-hero-auction">
+                  <span class="project-badge">Realtime Systems</span>
+                  <h2>Live Auction Platform</h2>
+                  <p>
+                    Event-driven auction product built for concurrent bidding, synchronized timers,
+                    and reliable low-latency updates.
+                  </p>
+                  <div class="project-tags">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Socket.io</span>
+                    <span>Docker</span>
+                  </div>
+                </section>
+                <div class="project-grid">
+                  <article class="project-panel">
+                    <span class="panel-kicker">Challenge</span>
+                    <p>
+                      Keep realtime bidding trustworthy under pressure, where users need to believe
+                      the timers and state they are seeing.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Architecture</span>
+                    <p>
+                      Event-driven backend with atomic update handling and synchronized broadcasts
+                      to reduce race conditions and client confusion.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Highlights</span>
+                    <ul>
+                      <li>Concurrent bid safety</li>
+                      <li>Authoritative countdown state</li>
+                      <li>Low-latency broadcasts</li>
+                      <li>Render + Vercel deployment split</li>
+                    </ul>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Takeaway</span>
+                    <p>
+                      Realtime products succeed when systems design and UI trust signals are treated
+                      as the same problem, not separate tasks.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window safari-window hidden-window"
+            id="rating-window"
+            data-window
+            data-app="rating"
+            style="top: 160px; left: 380px; width: 700px; height: 530px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="rating-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="rating-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Safari</div>
+              <div class="safari-toolbar">
+                <span class="safari-pill">content-rating.case-study</span>
+              </div>
+            </header>
+            <div class="window-body safari-body">
+              <div class="browser-chrome">
+                <span class="browser-tab active">Content Rating</span>
+                <span class="browser-address">https://portfolio.local/content-rating</span>
+              </div>
+              <div class="browser-page">
+                <section class="project-hero project-hero-rating">
+                  <span class="project-badge">Backend Architecture</span>
+                  <h2>Content Rating System</h2>
+                  <p>
+                    Recommendation-oriented backend with a six-tier progression model, PostgreSQL
+                    schema design, and a clean Go service architecture.
+                  </p>
+                  <div class="project-tags">
+                    <span>Go</span>
+                    <span>PostgreSQL</span>
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                  </div>
+                </section>
+                <div class="project-grid">
+                  <article class="project-panel">
+                    <span class="panel-kicker">Schema</span>
+                    <p>
+                      Built with foreign keys, cascade deletes, and performance-minded indexes to
+                      keep recommendation queries robust as the system grew.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Backend shape</span>
+                    <p>
+                      Handler → service → repository structure kept business logic organized and
+                      extensible without letting routing code become messy.
+                    </p>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Highlights</span>
+                    <ul>
+                      <li>Six-tier recommendation progression</li>
+                      <li>Versioned SQL setup</li>
+                      <li>RESTful API design</li>
+                      <li>Recharts-powered frontend reporting</li>
+                    </ul>
+                  </article>
+                  <article class="project-panel">
+                    <span class="panel-kicker">Takeaway</span>
+                    <p>
+                      Strong backend systems feel calm because the contracts are clear, the schema
+                      is intentional, and the architecture can evolve without friction.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window mail-window hidden-window"
+            id="mail-window"
+            data-window
+            data-app="mail"
+            style="top: 122px; left: 500px; width: 560px; height: 500px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="mail-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="mail-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Mail</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">New Message</span>
+              </div>
+            </header>
+            <div class="window-body mail-body">
+              <div class="mail-meta">
+                <div>
+                  <span>From</span>
+                  <strong>visitor@portfolio.com</strong>
+                </div>
+                <div>
+                  <span>To</span>
+                  <strong>anjaliiprajapati04@gmail.com</strong>
+                </div>
+              </div>
+              <form class="mail-compose" action="mailto:anjaliiprajapati04@gmail.com" method="post" enctype="text/plain">
+                <label>
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  <span>Subject</span>
+                  <input type="text" name="subject" placeholder="Role, project, or collaboration" required />
+                </label>
+                <label>
+                  <span>Message</span>
+                  <textarea name="message" rows="7" placeholder="Tell me what you're building or hiring for." required></textarea>
+                </label>
+                <div class="mail-actions">
+                  <a href="mailto:anjaliiprajapati04@gmail.com" class="mail-link">Email directly</a>
+                  <button class="send-button" type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </article>
+
+          <article
+            class="app-window preview-window hidden-window"
+            id="resume-window"
+            data-window
+            data-app="resume"
+            style="top: 110px; left: 470px; width: 620px; height: 540px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="resume-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="resume-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Quick Look</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">Anjali_Prajapati_Resume.pdf</span>
+              </div>
+            </header>
+            <div class="window-body preview-body">
+              <div class="preview-toolbar">
+                <span>Resume preview</span>
+                <a href="assets/Anjali_Prajapati_Resume.pdf" download class="preview-download">Download PDF</a>
+              </div>
+              <iframe
+                class="resume-frame"
+                src="assets/Anjali_Prajapati_Resume.pdf"
+                title="Anjali Prajapati Resume"
+              ></iframe>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <div class="dock" id="dock">
+        <button class="dock-item active" type="button" data-open="finder-window" aria-label="Open Finder">
+          <span class="dock-icon folder-art"></span>
+          <span class="dock-label">Finder</span>
+        </button>
+        <button class="dock-item active" type="button" data-open="rewear-window" aria-label="Open ReWear">
+          <span class="dock-icon safari-art"></span>
+          <span class="dock-label">ReWear</span>
+        </button>
+        <button class="dock-item" type="button" data-open="primetrade-window" aria-label="Open PrimeTrade">
+          <span class="dock-icon safari-art alt"></span>
+          <span class="dock-label">PrimeTrade</span>
+        </button>
+        <button class="dock-item" type="button" data-open="auction-window" aria-label="Open Live Auction">
+          <span class="dock-icon safari-art alt-two"></span>
+          <span class="dock-label">Auction</span>
+        </button>
+        <button class="dock-item" type="button" data-open="rating-window" aria-label="Open Content Rating">
+          <span class="dock-icon terminal-art"></span>
+          <span class="dock-label">Rating</span>
+        </button>
+        <button class="dock-item" type="button" data-open="mail-window" aria-label="Open Mail">
+          <span class="dock-icon mail-art"></span>
+          <span class="dock-label">Mail</span>
+        </button>
+        <button class="dock-item" type="button" data-open="resume-window" aria-label="Open Resume">
+          <span class="dock-icon preview-art"></span>
+          <span class="dock-label">Resume</span>
+        </button>
+      </div>
+    </section>
   </div>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="#home">
-        <span class="brand-mark"></span>
-        <span>Anjali Prajapati</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
-        Menu
-      </button>
-      <nav id="nav-menu" class="nav">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#craft">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+  <section class="mobile-layout">
+    <header class="mobile-hero">
+      <p class="mobile-eyebrow">Software Developer • Haridwar, India</p>
+      <h1>Anjali Prajapati</h1>
+      <p class="mobile-lead">
+        I build full-stack products with clean backend structure, clear UI, and strong product feel.
+      </p>
+      <div class="mobile-actions">
+        <a class="mobile-button primary" href="assets/Anjali_Prajapati_Resume.pdf" download>Download resume</a>
+        <a class="mobile-button ghost" href="mailto:anjaliiprajapati04@gmail.com">Email me</a>
+      </div>
     </header>
 
-    <main>
-      <section id="home" class="hero panel hero-panel">
-        <div class="hero-copy">
-          <p class="eyebrow">Software Developer • Haridwar, India</p>
-          <div class="hero-kicker-row">
-            <span class="hero-chip">Frontend feel</span>
-            <span class="hero-chip">Backend rigor</span>
-            <span class="hero-chip">Product instinct</span>
-          </div>
-          <h1>
-            Building products
-            <span>that feel sharp,</span>
-            cinematic,
-            <span>and seriously usable.</span>
-          </h1>
-          <p class="hero-text">
-            I design and ship developer-forward products across backend systems, real-time
-            experiences, dashboards, and modern web interfaces. I care about clean architecture,
-            expressive UI, and making complex flows feel simple.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#work">See selected work</a>
-            <a class="button button-ghost" href="assets/Anjali_Prajapati_Resume.pdf" download>Download resume</a>
-          </div>
-          <div class="hero-meta">
-            <div>
-              <span class="meta-label">Currently focused on</span>
-              <strong>Full-stack systems + standout frontend craft</strong>
-            </div>
-            <div>
-              <span class="meta-label">Open to</span>
-              <strong>Internships, SDE roles, and ambitious product builds</strong>
-            </div>
-          </div>
-          <a class="hero-mail" href="mailto:anjaliiprajapati04@gmail.com">anjaliiprajapati04@gmail.com</a>
-        </div>
-        <div class="hero-stage">
-          <div class="stage-card stage-card-large" data-parallax="0.18">
-            <span class="stage-kicker">Featured build</span>
-            <h2>ReWear</h2>
-            <p>
-              A circular-fashion platform designed for swapping, redeeming, and moderating item
-              flows through a point-based product system.
-            </p>
-            <a href="projects/rewear.html">Open case study</a>
-          </div>
-          <div class="stage-grid">
-            <div class="stage-card" data-parallax="0.12">
-              <span class="stage-kicker">Product systems</span>
-              <h3>PrimeTrade</h3>
-              <p>JWT auth, RBAC controls, and a task dashboard built with operational clarity.</p>
-            </div>
-            <div class="stage-card" data-parallax="0.16">
-              <span class="stage-kicker">Realtime</span>
-              <h3>Live Auction</h3>
-              <p>Socket-powered bidding with synchronized timers and race-condition-aware flows.</p>
-            </div>
-          </div>
+    <main class="mobile-content">
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">About</p>
+        <h2>Systems first, polish always.</h2>
+        <p>
+          Electrical Engineering student at NIT Agartala with a strong pull toward product
+          engineering, frontend craft, and backend architecture.
+        </p>
+      </section>
+
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">Featured project</p>
+        <h2>ReWear</h2>
+        <p>
+          Circular-fashion exchange platform with authentication, admin moderation, uploads, and a
+          point-based swap and redeem flow.
+        </p>
+        <a class="mobile-inline" href="projects/rewear.html">Open case study</a>
+      </section>
+
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">Projects</p>
+        <div class="mobile-project-list">
+          <a href="projects/primetrade.html">PrimeTrade</a>
+          <a href="projects/live-auction.html">Live Auction</a>
+          <a href="projects/content-rating.html">Content Rating</a>
         </div>
       </section>
 
-      <section class="marquee">
-        <div class="marquee-track">
-          <span>Node.js</span>
-          <span>Express</span>
-          <span>MongoDB</span>
-          <span>PostgreSQL</span>
-          <span>Socket.io</span>
-          <span>React</span>
-          <span>Tailwind CSS</span>
-          <span>Docker</span>
-          <span>JWT</span>
-          <span>Render</span>
-          <span>Vercel</span>
-          <span>Next.js</span>
-          <span>Node.js</span>
-          <span>Express</span>
-          <span>MongoDB</span>
-          <span>PostgreSQL</span>
-          <span>Socket.io</span>
-          <span>React</span>
-          <span>Tailwind CSS</span>
-          <span>Docker</span>
-          <span>JWT</span>
-          <span>Render</span>
-          <span>Vercel</span>
-          <span>Next.js</span>
-        </div>
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">Skills</p>
+        <ul class="mobile-skill-list">
+          <li>React, Next.js, Tailwind, HTML, CSS, JavaScript</li>
+          <li>Node.js, Express, Go, REST APIs, JWT, Prisma</li>
+          <li>MongoDB, PostgreSQL, MySQL, Docker, Render, Vercel</li>
+        </ul>
       </section>
 
-      <section class="section narrative narrative-section">
-        <div class="narrative-intro">
-          <p class="eyebrow">Scroll story</p>
-          <h2>As the build gets deeper, the work gets more intentional.</h2>
-          <p>
-            I like portfolios that reveal character through rhythm, not just copy. So this section
-            maps how I think when a project needs engineering depth and visual energy at the same time.
-          </p>
-        </div>
-        <div class="narrative-stack">
-          <article class="narrative-card panel reveal" data-parallax="0.08">
-            <span class="narrative-index">01</span>
-            <h3>Start with the system.</h3>
-            <p>
-              I want the backend, data flow, and edge cases to make sense before the interface tries
-              to look impressive.
-            </p>
-          </article>
-          <article class="narrative-card panel reveal" data-parallax="0.12">
-            <span class="narrative-index">02</span>
-            <h3>Shape the interaction.</h3>
-            <p>
-              Then I design for pace: what should feel immediate, what should feel calm, and where
-              motion actually helps understanding.
-            </p>
-          </article>
-          <article class="narrative-card panel reveal" data-parallax="0.16">
-            <span class="narrative-index">03</span>
-            <h3>Polish the details.</h3>
-            <p>
-              The final layer is what makes a project memorable: better defaults, stronger copy,
-              cleaner states, and a little surprise while scrolling.
-            </p>
-          </article>
-        </div>
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">Highlights</p>
+        <ul class="mobile-skill-list">
+          <li>500+ DSA problems solved</li>
+          <li>Adobe India Hackathon 2025 Round 2</li>
+          <li>Odoo Hackathon 2025 finalist selection</li>
+          <li>TakeUForward Technical Content Writer Intern</li>
+        </ul>
       </section>
 
-      <section id="work" class="section work-section">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>Case studies with product thinking, not just code dumps.</h2>
-          <p>
-            Each project here is framed around architecture, interaction quality, and the
-            engineering decisions that made the system hold together.
-          </p>
+      <section class="mobile-card">
+        <p class="mobile-card-kicker">Contact</p>
+        <p>anjaliiprajapati04@gmail.com</p>
+        <div class="mobile-project-list">
+          <a href="mailto:anjaliiprajapati04@gmail.com">Send email</a>
+          <a href="https://github.com/anjalii40" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="assets/Anjali_Prajapati_Resume.pdf" download>Resume PDF</a>
         </div>
-
-        <div class="projects-grid">
-          <article class="project-card panel reveal">
-            <div class="project-topline">
-              <span>01</span>
-              <span>Hackathon Build</span>
-            </div>
-            <h3>ReWear</h3>
-            <p>
-              Circular-fashion exchange platform with authentication, uploads, admin moderation,
-              and a point-based swap and redeem flow.
-            </p>
-            <ul class="tag-list">
-              <li>HTML</li>
-              <li>Node.js</li>
-              <li>MongoDB</li>
-              <li>Cloudinary</li>
-            </ul>
-            <a class="inline-link" href="projects/rewear.html">Read case study</a>
-          </article>
-
-          <article class="project-card panel reveal">
-            <div class="project-topline">
-              <span>02</span>
-              <span>Backend + Product UI</span>
-            </div>
-            <h3>PrimeTrade Task Manager</h3>
-            <p>
-              Secure full-stack task management with JWT auth, admin controls, Swagger docs,
-              pagination, and a vivid dashboard UI.
-            </p>
-            <ul class="tag-list">
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Prisma</li>
-              <li>PostgreSQL</li>
-            </ul>
-            <a class="inline-link" href="projects/primetrade.html">Read case study</a>
-          </article>
-
-          <article class="project-card panel reveal">
-            <div class="project-topline">
-              <span>03</span>
-              <span>Realtime Systems</span>
-            </div>
-            <h3>Live Auction Platform</h3>
-            <p>
-              Event-driven auction product built for concurrent bidding, synchronized timers, and
-              low-latency bid propagation.
-            </p>
-            <ul class="tag-list">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Socket.io</li>
-              <li>Docker</li>
-            </ul>
-            <a class="inline-link" href="projects/live-auction.html">Read case study</a>
-          </article>
-
-          <article class="project-card panel reveal">
-            <div class="project-topline">
-              <span>04</span>
-              <span>Backend Architecture</span>
-            </div>
-            <h3>Content Rating System</h3>
-            <p>
-              A recommendation backend with a six-tier progression model, optimized PostgreSQL
-              schema, and clean Go service architecture.
-            </p>
-            <ul class="tag-list">
-              <li>Go</li>
-              <li>PostgreSQL</li>
-              <li>Next.js</li>
-              <li>TypeScript</li>
-            </ul>
-            <a class="inline-link" href="projects/content-rating.html">Read case study</a>
-          </article>
-
-        </div>
-      </section>
-
-      <section id="about" class="section about-layout about-section">
-        <div class="about-copy panel reveal">
-          <p class="eyebrow">About</p>
-          <h2>I like systems that are disciplined under the hood and expressive on the surface.</h2>
-          <p>
-            I am an Electrical Engineering student at the National Institute of Technology Agartala
-            with a strong pull toward product engineering. I enjoy moving between frontend and
-            backend work, especially when a project needs both visual precision and architectural
-            clarity.
-          </p>
-          <p>
-            My recent work spans technical writing, realtime systems, recommendation logic, admin
-            dashboards, and deployable full-stack apps. I bring the same energy to code quality,
-            developer experience, and visual polish.
-          </p>
-        </div>
-
-        <div class="spotlight-stack">
-          <div class="spotlight-card panel reveal">
-            <span class="spotlight-kicker">Experience</span>
-            <h3>TakeUForward</h3>
-            <p>Technical Content Writer Intern • Jul 2025 to Sep 2025</p>
-            <p>
-              Revamped 200+ DSA articles, authored code walkthroughs in C++, Python, and
-              JavaScript, and helped make hard concepts more learnable.
-            </p>
-          </div>
-          <div class="spotlight-card panel reveal">
-            <span class="spotlight-kicker">Education</span>
-            <h3>NIT Agartala</h3>
-            <p>B.Tech in Electrical Engineering • 2023 to 2027</p>
-            <p>CGPA: 8.26</p>
-          </div>
-          <div class="spotlight-card panel reveal">
-            <span class="spotlight-kicker">Highlights</span>
-            <h3>Momentum</h3>
-            <p>500+ DSA problems solved, 2025 Adobe India Hackathon Round 2, and two major hackathon finals.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="craft" class="section craft-section">
-        <div class="section-heading">
-          <p class="eyebrow">Craft stack</p>
-          <h2>Tools I reach for when the build needs both speed and structure.</h2>
-        </div>
-        <div class="skills-board">
-          <article class="skill-column panel reveal">
-            <h3>Frontend</h3>
-            <p>React, Next.js, Redux Toolkit, Tailwind CSS, HTML, CSS, JavaScript</p>
-          </article>
-          <article class="skill-column panel reveal">
-            <h3>Backend</h3>
-            <p>Node.js, Express.js, Go, REST APIs, JWT, Socket.io, Mongoose, Prisma</p>
-          </article>
-          <article class="skill-column panel reveal">
-            <h3>Data + Infra</h3>
-            <p>MongoDB, MySQL, PostgreSQL, Docker, Render, Vercel, GitHub, Postman</p>
-          </article>
-          <article class="skill-column panel reveal">
-            <h3>Core CS</h3>
-            <p>DSA, OOP, database design, system design, clean architecture, debugging</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section achievement-band panel reveal">
-        <p class="eyebrow">Achievements</p>
-        <div class="achievement-grid">
-          <div>
-            <strong>500+</strong>
-            <span>DSA problems solved across LeetCode, GeeksforGeeks, and Codeforces</span>
-          </div>
-          <div>
-            <strong>Top 300</strong>
-            <span>Out of 19,000+ teams in Odoo Hackathon 2025 finalist selection</span>
-          </div>
-          <div>
-            <strong>Round 2</strong>
-            <span>Selected from 250,000+ participants in Adobe India Hackathon 2025</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact-section panel contact-shell">
-        <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s build something ambitious and well-made.</h2>
-          <p>
-            I’m interested in software engineering roles, internships, and projects where product
-            quality matters as much as implementation depth.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:anjaliiprajapati04@gmail.com">anjaliiprajapati04@gmail.com</a>
-            <a href="https://github.com/anjalii40" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="assets/Anjali_Prajapati_Resume.pdf" download>Resume</a>
-          </div>
-        </div>
-
-        <form class="contact-form" action="mailto:anjaliiprajapati04@gmail.com" method="post" enctype="text/plain">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-          <label>
-            <span>What are we building?</span>
-            <textarea name="message" rows="5" placeholder="Tell me about the role, product, or project." required></textarea>
-          </label>
-          <button class="button button-primary" type="submit">Start the conversation</button>
-        </form>
       </section>
     </main>
-
-    <footer class="footer">
-      <p>Designed and built by Anjali Prajapati.</p>
-      <p id="year-stamp"></p>
-    </footer>
-  </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
