@@ -26,10 +26,9 @@
         <span>Portfolio OS</span>
       </div>
       <div class="lock-content">
-        <div class="lock-avatar lock-avatar-name">Anjali Prajapati</div>
+        <h2 class="lock-hero-name">Anjali Prajapati</h2>
         <p class="lock-role">Software Developer</p>
         <h1 id="lock-time">10:24</h1>
-        <p class="lock-name">Anjali Prajapati</p>
         <button class="unlock-button" id="unlock-button" type="button">
           Click to enter desktop
         </button>
@@ -51,8 +50,7 @@
         </div>
         <div class="menu-right">
           <button class="theme-toggle" id="desktop-theme-toggle" type="button" aria-label="Toggle theme">
-            <span class="theme-toggle-dot"></span>
-            <span id="desktop-theme-label">Dark</span>
+            <span class="theme-toggle-sun" aria-hidden="true"></span>
           </button>
           <span>anjaliiprajapati04@gmail.com</span>
           <span id="menu-date">Mon 30 Mar</span>
@@ -62,25 +60,25 @@
 
       <main class="desktop-stage" id="desktop-stage">
         <div class="desktop-icons">
-          <button class="desktop-icon" type="button" data-open="finder-window">
+          <button class="desktop-icon" type="button" data-open="projects-window">
             <span class="desktop-icon-art folder-art"></span>
-            <span>About Me</span>
+            <span>Projects</span>
           </button>
-          <button class="desktop-icon" type="button" data-open="rewear-window">
-            <span class="desktop-icon-art rewear-art"></span>
-            <span>ReWear</span>
+          <button class="desktop-icon" type="button" data-open="profile-window">
+            <span class="desktop-icon-art photobooth-art"></span>
+            <span>Profile</span>
           </button>
-          <button class="desktop-icon" type="button" data-open="primetrade-window">
-            <span class="desktop-icon-art primetrade-art"></span>
-            <span>PrimeTrade</span>
+          <button class="desktop-icon" type="button" data-open="contact-window">
+            <span class="desktop-icon-art call-art"></span>
+            <span>Contact</span>
           </button>
           <button class="desktop-icon" type="button" data-open="mail-window">
             <span class="desktop-icon-art mail-art"></span>
-            <span>Contact</span>
+            <span>Mail</span>
           </button>
-          <button class="desktop-icon" type="button" data-open="resume-window">
-            <span class="desktop-icon-art preview-art"></span>
-            <span>Resume.pdf</span>
+          <button class="desktop-icon" type="button" data-open="terminal-window">
+            <span class="desktop-icon-art terminal-art"></span>
+            <span>Terminal</span>
           </button>
         </div>
 
@@ -88,13 +86,13 @@
           <p class="desktop-welcome-kicker">Portfolio Desktop</p>
           <h2>Anjali Prajapati builds thoughtful products across frontend feel, backend structure, and user clarity.</h2>
           <p class="desktop-welcome-copy">
-            Explore the desktop like a workspace: open Finder to know me, Safari windows to read projects,
-            Mail to reach out, and Quick Look to preview my resume.
+            Explore the dock like a real workspace: Finder for projects, Photo Booth for profile,
+            Call and Mail for contact, WhatsApp-style chat for quick conversation, and Terminal for command access.
           </p>
           <div class="desktop-welcome-actions">
-            <button class="desktop-action" type="button" data-open="finder-window">Open profile</button>
-            <button class="desktop-action" type="button" data-open="rewear-window">Open ReWear</button>
-            <button class="desktop-action" type="button" data-open="mail-window">Open Mail</button>
+            <button class="desktop-action" type="button" data-open="projects-window">Open projects</button>
+            <button class="desktop-action" type="button" data-open="profile-window">Open profile</button>
+            <button class="desktop-action" type="button" data-open="terminal-window">Open terminal</button>
           </div>
           <div class="desktop-metrics">
             <article>
@@ -115,105 +113,42 @@
         <div class="window-layer" id="window-layer">
           <article
             class="app-window finder-window is-open"
-            id="finder-window"
+            id="projects-window"
             data-window
-            data-app="finder"
+            data-app="projects"
             style="top: 92px; left: 54px; width: 430px; height: 560px;"
           >
             <header class="window-titlebar" data-drag-handle>
               <div class="window-controls">
-                <button class="window-control close" type="button" data-action="close" data-target="finder-window" aria-label="Close"></button>
-                <button class="window-control minimize" type="button" data-action="minimize" data-target="finder-window" aria-label="Minimize"></button>
+                <button class="window-control close" type="button" data-action="close" data-target="projects-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="projects-window" aria-label="Minimize"></button>
                 <button class="window-control zoom" type="button" aria-hidden="true"></button>
               </div>
               <div class="window-title">Finder</div>
               <div class="window-toolbar">
-                <span class="toolbar-pill active">Portfolio</span>
+                <span class="toolbar-pill active">Projects</span>
               </div>
             </header>
             <div class="window-body finder-body">
               <aside class="finder-sidebar">
                 <div class="sidebar-section">
                   <p class="sidebar-label">Favorites</p>
-                  <button class="sidebar-item active" type="button" data-finder-panel="profile">Profile</button>
-                  <button class="sidebar-item" type="button" data-finder-panel="skills">Skills</button>
-                  <button class="sidebar-item" type="button" data-finder-panel="wins">Highlights</button>
-                  <button class="sidebar-item" type="button" data-finder-panel="projects">Projects</button>
+                  <button class="sidebar-item active" type="button" data-finder-panel="featured">Featured</button>
+                  <button class="sidebar-item" type="button" data-finder-panel="projects">All Projects</button>
+                  <button class="sidebar-item" type="button" data-finder-panel="resume">Resume</button>
                 </div>
               </aside>
               <div class="finder-content">
-                <section class="finder-panel is-active" data-finder-view="profile">
-                  <p class="finder-eyebrow">Profile</p>
-                  <h2>Anjali Prajapati</h2>
+                <section class="finder-panel is-active" data-finder-view="featured">
+                  <p class="finder-eyebrow">Featured</p>
+                  <h2>ReWear leads the workspace.</h2>
                   <p class="finder-lead">
-                    Software developer focused on polished frontend feel, solid backend systems, and
-                    product experiences that actually hold together.
+                    Explore the project collection from here, then open each case study in Safari or
+                    use Terminal for a command-line view with live links and GitHub access.
                   </p>
-                  <div class="finder-metadata">
-                    <div>
-                      <span>Location</span>
-                      <strong>Haridwar, India</strong>
-                    </div>
-                    <div>
-                      <span>Education</span>
-                      <strong>NIT Agartala • B.Tech EE</strong>
-                    </div>
-                    <div>
-                      <span>Focus</span>
-                      <strong>Full-stack systems + UI craft</strong>
-                    </div>
-                  </div>
                   <div class="finder-note">
-                    <p class="finder-note-title">What I care about</p>
-                    <p>
-                      I like products that feel disciplined under the hood and expressive on the
-                      surface. My work spans realtime systems, admin dashboards, recommendation
-                      logic, and technical storytelling.
-                    </p>
-                  </div>
-                </section>
-
-                <section class="finder-panel" data-finder-view="skills">
-                  <p class="finder-eyebrow">Skills</p>
-                  <div class="skill-stack-grid">
-                    <article class="skill-stack-card">
-                      <span>Frontend</span>
-                      <strong>React, Next.js, Tailwind, HTML, CSS, JavaScript</strong>
-                    </article>
-                    <article class="skill-stack-card">
-                      <span>Backend</span>
-                      <strong>Node.js, Express, Go, REST APIs, JWT, Prisma</strong>
-                    </article>
-                    <article class="skill-stack-card">
-                      <span>Data</span>
-                      <strong>MongoDB, PostgreSQL, MySQL, Mongoose</strong>
-                    </article>
-                    <article class="skill-stack-card">
-                      <span>Infra</span>
-                      <strong>Docker, Render, Vercel, GitHub, Postman</strong>
-                    </article>
-                  </div>
-                </section>
-
-                <section class="finder-panel" data-finder-view="wins">
-                  <p class="finder-eyebrow">Highlights</p>
-                  <div class="highlight-list">
-                    <article>
-                      <strong>500+</strong>
-                      <p>DSA problems solved across LeetCode, GeeksforGeeks, and Codeforces.</p>
-                    </article>
-                    <article>
-                      <strong>Adobe India Hackathon 2025</strong>
-                      <p>Selected for Round 2 from 250,000+ participants.</p>
-                    </article>
-                    <article>
-                      <strong>Odoo Hackathon 2025</strong>
-                      <p>Finalist selection in the top 300 out of 19,000+ teams.</p>
-                    </article>
-                    <article>
-                      <strong>TakeUForward</strong>
-                      <p>Technical Content Writer Intern, revamping 200+ DSA articles.</p>
-                    </article>
+                    <p class="finder-note-title">Pinned project</p>
+                    <p>ReWear is the primary featured build, followed by PrimeTrade, Live Auction, and Content Rating.</p>
                   </div>
                 </section>
 
@@ -238,6 +173,86 @@
                     </button>
                   </div>
                 </section>
+
+                <section class="finder-panel" data-finder-view="resume">
+                  <p class="finder-eyebrow">Resume</p>
+                  <div class="finder-note">
+                    <p class="finder-note-title">Quick Look ready</p>
+                    <p>Open your resume in a Preview-style window or download the PDF directly.</p>
+                  </div>
+                  <div class="desktop-welcome-actions">
+                    <button class="desktop-action finder-action" type="button" data-open="resume-window">Open resume</button>
+                    <a class="desktop-action finder-action" href="assets/Anjali_Prajapati_Resume.pdf" download>Download PDF</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window profile-window hidden-window"
+            id="profile-window"
+            data-window
+            data-app="profile"
+            style="top: 108px; left: 140px; width: 420px; height: 520px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="profile-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="profile-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Photo Booth</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">Profile</span>
+              </div>
+            </header>
+            <div class="window-body profile-body">
+              <div class="profile-camera-card">
+                <div class="profile-glow"></div>
+                <div class="profile-avatar-large">AP</div>
+                <h2>Anjali Prajapati</h2>
+                <p>Software developer building polished interfaces, strong backend systems, and product-first experiences.</p>
+              </div>
+              <div class="profile-facts">
+                <article><span>Location</span><strong>Haridwar, India</strong></article>
+                <article><span>Education</span><strong>NIT Agartala</strong></article>
+                <article><span>Strength</span><strong>Frontend feel + backend rigor</strong></article>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window contact-window hidden-window"
+            id="contact-window"
+            data-window
+            data-app="contact"
+            style="top: 142px; left: 240px; width: 420px; height: 420px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="contact-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="contact-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Calls</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">Contact Card</span>
+              </div>
+            </header>
+            <div class="window-body contact-body">
+              <div class="contact-card">
+                <h2>Anjali Prajapati</h2>
+                <p>Open to internships, software roles, and ambitious product builds.</p>
+                <div class="contact-list">
+                  <a href="mailto:anjaliiprajapati04@gmail.com">anjaliiprajapati04@gmail.com</a>
+                  <a href="https://github.com/anjalii40" target="_blank" rel="noreferrer">github.com/anjalii40</a>
+                  <span>Haridwar, India</span>
+                </div>
+                <div class="contact-card-actions">
+                  <button class="desktop-action call-action" type="button" data-open="mail-window">Open mail</button>
+                  <button class="desktop-action call-action" type="button" data-open="chat-window">Open chat</button>
+                </div>
               </div>
             </div>
           </article>
@@ -612,6 +627,69 @@
           </article>
 
           <article
+            class="app-window chat-window hidden-window"
+            id="chat-window"
+            data-window
+            data-app="chat"
+            style="top: 156px; left: 560px; width: 420px; height: 470px;"
+          >
+            <header class="window-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="chat-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="chat-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">WhatsApp</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">Quick chat</span>
+              </div>
+            </header>
+            <div class="window-body chat-body">
+              <div class="chat-thread">
+                <div class="chat-bubble incoming">Hi Anjali, are you open to collaborating on product and frontend-focused work?</div>
+                <div class="chat-bubble outgoing">Yes. I’m especially interested in software roles, internships, and thoughtful full-stack products.</div>
+                <div class="chat-bubble incoming">What’s the best way to reach you right now?</div>
+                <div class="chat-bubble outgoing">Email is the fastest. You can also open Mail here from the dock or terminal.</div>
+              </div>
+              <div class="chat-actions">
+                <a class="project-link-button" href="mailto:anjaliiprajapati04@gmail.com">Email now</a>
+                <button class="project-link-button secondary" type="button" data-open="mail-window">Open Mail</button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="app-window terminal-window hidden-window"
+            id="terminal-window"
+            data-window
+            data-app="terminal"
+            style="top: 124px; left: 320px; width: 700px; height: 480px;"
+          >
+            <header class="window-titlebar terminal-titlebar" data-drag-handle>
+              <div class="window-controls">
+                <button class="window-control close" type="button" data-action="close" data-target="terminal-window" aria-label="Close"></button>
+                <button class="window-control minimize" type="button" data-action="minimize" data-target="terminal-window" aria-label="Minimize"></button>
+                <button class="window-control zoom" type="button" aria-hidden="true"></button>
+              </div>
+              <div class="window-title">Terminal</div>
+              <div class="window-toolbar">
+                <span class="toolbar-pill active">anjali@portfolio</span>
+              </div>
+            </header>
+            <div class="window-body terminal-body">
+              <div class="terminal-output" id="terminal-output">
+                <div class="terminal-line">Last login: Mon Mar 30 on ttys001</div>
+                <div class="terminal-line">Welcome to Anjali Portfolio Terminal.</div>
+                <div class="terminal-line">Type <span class="terminal-accent">help</span> to explore profile, contact, resume, and projects.</div>
+              </div>
+              <form class="terminal-form" id="terminal-form">
+                <label class="terminal-prompt" for="terminal-input">anjali@portfolio ~ %</label>
+                <input id="terminal-input" class="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Type a command" />
+              </form>
+            </div>
+          </article>
+
+          <article
             class="app-window preview-window hidden-window"
             id="resume-window"
             data-window
@@ -655,33 +733,29 @@
       </main>
 
       <div class="dock" id="dock">
-        <button class="dock-item active" type="button" data-open="finder-window" aria-label="Open Finder">
+        <button class="dock-item active" type="button" data-open="projects-window" aria-label="Open Projects">
           <span class="dock-icon folder-art"></span>
-          <span class="dock-label">Finder</span>
+          <span class="dock-label">Projects</span>
         </button>
-        <button class="dock-item active" type="button" data-open="rewear-window" aria-label="Open ReWear">
-          <span class="dock-icon rewear-art"></span>
-          <span class="dock-label">ReWear</span>
+        <button class="dock-item" type="button" data-open="profile-window" aria-label="Open Profile">
+          <span class="dock-icon photobooth-art"></span>
+          <span class="dock-label">Profile</span>
         </button>
-        <button class="dock-item" type="button" data-open="primetrade-window" aria-label="Open PrimeTrade">
-          <span class="dock-icon primetrade-art"></span>
-          <span class="dock-label">PrimeTrade</span>
-        </button>
-        <button class="dock-item" type="button" data-open="auction-window" aria-label="Open Live Auction">
-          <span class="dock-icon auction-art"></span>
-          <span class="dock-label">Auction</span>
-        </button>
-        <button class="dock-item" type="button" data-open="rating-window" aria-label="Open Content Rating">
-          <span class="dock-icon rating-art"></span>
-          <span class="dock-label">Rating</span>
+        <button class="dock-item" type="button" data-open="contact-window" aria-label="Open Contact">
+          <span class="dock-icon call-art"></span>
+          <span class="dock-label">Contact</span>
         </button>
         <button class="dock-item" type="button" data-open="mail-window" aria-label="Open Mail">
           <span class="dock-icon mail-art"></span>
           <span class="dock-label">Mail</span>
         </button>
-        <button class="dock-item" type="button" data-open="resume-window" aria-label="Open Resume">
-          <span class="dock-icon preview-art"></span>
-          <span class="dock-label">Resume</span>
+        <button class="dock-item" type="button" data-open="chat-window" aria-label="Open Chat">
+          <span class="dock-icon whatsapp-art"></span>
+          <span class="dock-label">Chat</span>
+        </button>
+        <button class="dock-item" type="button" data-open="terminal-window" aria-label="Open Terminal">
+          <span class="dock-icon terminal-art"></span>
+          <span class="dock-label">Terminal</span>
         </button>
       </div>
     </section>
@@ -692,8 +766,7 @@
       <div class="mobile-hero-top">
         <p class="mobile-eyebrow">Software Developer • Haridwar, India</p>
         <button class="theme-toggle mobile-theme-toggle" id="mobile-theme-toggle" type="button" aria-label="Toggle theme">
-          <span class="theme-toggle-dot"></span>
-          <span id="mobile-theme-label">Dark</span>
+          <span class="theme-toggle-sun" aria-hidden="true"></span>
         </button>
       </div>
       <h1>Anjali Prajapati</h1>
