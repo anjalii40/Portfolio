@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anjali Prajapati | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Anjali Prajapati, a software developer building bold interfaces, scalable backend systems, and polished product experiences."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <span class="brand-mark"></span>
+        <span>Anjali Prajapati</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        Menu
+      </button>
+      <nav id="nav-menu" class="nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#craft">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Developer • Haridwar, India</p>
+          <h1>Building products that feel sharp, cinematic, and seriously usable.</h1>
+          <p class="hero-text">
+            I design and ship developer-forward products across backend systems, real-time
+            experiences, dashboards, and modern web interfaces. I care about clean architecture,
+            expressive UI, and making complex flows feel simple.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">See selected work</a>
+            <a class="button button-ghost" href="assets/Anjali_Prajapati_Resume.pdf" download>Download resume</a>
+          </div>
+          <div class="hero-meta">
+            <div>
+              <span class="meta-label">Currently focused on</span>
+              <strong>Full-stack systems + standout frontend craft</strong>
+            </div>
+            <div>
+              <span class="meta-label">Open to</span>
+              <strong>Internships, SDE roles, and ambitious product builds</strong>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stage">
+          <div class="stage-card stage-card-large">
+            <span class="stage-kicker">Featured build</span>
+            <h2>PrimeTrade</h2>
+            <p>
+              A secure task operations platform with JWT authentication, RBAC controls, and a
+              polished control-panel experience.
+            </p>
+            <a href="projects/primetrade.html">Open case study</a>
+          </div>
+          <div class="stage-grid">
+            <div class="stage-card">
+              <span class="stage-kicker">Realtime</span>
+              <h3>Live Auction</h3>
+              <p>Socket-powered bidding with race-condition-aware architecture.</p>
+            </div>
+            <div class="stage-card">
+              <span class="stage-kicker">Systems</span>
+              <h3>Content Rating</h3>
+              <p>Go + PostgreSQL pipeline with structured recommendation logic.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="marquee">
+        <div class="marquee-track">
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>MongoDB</span>
+          <span>PostgreSQL</span>
+          <span>Socket.io</span>
+          <span>React</span>
+          <span>Tailwind CSS</span>
+          <span>Docker</span>
+          <span>JWT</span>
+          <span>Render</span>
+          <span>Vercel</span>
+          <span>Next.js</span>
+          <span>Node.js</span>
+          <span>Express</span>
+          <span>MongoDB</span>
+          <span>PostgreSQL</span>
+          <span>Socket.io</span>
+          <span>React</span>
+          <span>Tailwind CSS</span>
+          <span>Docker</span>
+          <span>JWT</span>
+          <span>Render</span>
+          <span>Vercel</span>
+          <span>Next.js</span>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Case studies with product thinking, not just code dumps.</h2>
+          <p>
+            Each project here is framed around architecture, interaction quality, and the
+            engineering decisions that made the system hold together.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card panel reveal">
+            <div class="project-topline">
+              <span>01</span>
+              <span>Backend + Product UI</span>
+            </div>
+            <h3>PrimeTrade Task Manager</h3>
+            <p>
+              Secure full-stack task management with JWT auth, admin controls, Swagger docs,
+              pagination, and a vivid dashboard UI.
+            </p>
+            <ul class="tag-list">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>Prisma</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <a class="inline-link" href="projects/primetrade.html">Read case study</a>
+          </article>
+
+          <article class="project-card panel reveal">
+            <div class="project-topline">
+              <span>02</span>
+              <span>Realtime Systems</span>
+            </div>
+            <h3>Live Auction Platform</h3>
+            <p>
+              Event-driven auction product built for concurrent bidding, synchronized timers, and
+              low-latency bid propagation.
+            </p>
+            <ul class="tag-list">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Socket.io</li>
+              <li>Docker</li>
+            </ul>
+            <a class="inline-link" href="projects/live-auction.html">Read case study</a>
+          </article>
+
+          <article class="project-card panel reveal">
+            <div class="project-topline">
+              <span>03</span>
+              <span>Backend Architecture</span>
+            </div>
+            <h3>Content Rating System</h3>
+            <p>
+              A recommendation backend with a six-tier progression model, optimized PostgreSQL
+              schema, and clean Go service architecture.
+            </p>
+            <ul class="tag-list">
+              <li>Go</li>
+              <li>PostgreSQL</li>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+            </ul>
+            <a class="inline-link" href="projects/content-rating.html">Read case study</a>
+          </article>
+
+          <article class="project-card panel reveal">
+            <div class="project-topline">
+              <span>04</span>
+              <span>Hackathon Build</span>
+            </div>
+            <h3>ReWear</h3>
+            <p>
+              Circular-fashion exchange platform with authentication, uploads, admin moderation,
+              and a point-based swap and redeem flow.
+            </p>
+            <ul class="tag-list">
+              <li>HTML</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+              <li>Cloudinary</li>
+            </ul>
+            <a class="inline-link" href="projects/rewear.html">Read case study</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about-layout">
+        <div class="about-copy panel reveal">
+          <p class="eyebrow">About</p>
+          <h2>I like systems that are disciplined under the hood and expressive on the surface.</h2>
+          <p>
+            I am an Electrical Engineering student at the National Institute of Technology Agartala
+            with a strong pull toward product engineering. I enjoy moving between frontend and
+            backend work, especially when a project needs both visual precision and architectural
+            clarity.
+          </p>
+          <p>
+            My recent work spans technical writing, realtime systems, recommendation logic, admin
+            dashboards, and deployable full-stack apps. I bring the same energy to code quality,
+            developer experience, and visual polish.
+          </p>
+        </div>
+
+        <div class="spotlight-stack">
+          <div class="spotlight-card panel reveal">
+            <span class="spotlight-kicker">Experience</span>
+            <h3>TakeUForward</h3>
+            <p>Technical Content Writer Intern • Jul 2025 to Sep 2025</p>
+            <p>
+              Revamped 200+ DSA articles, authored code walkthroughs in C++, Python, and
+              JavaScript, and helped make hard concepts more learnable.
+            </p>
+          </div>
+          <div class="spotlight-card panel reveal">
+            <span class="spotlight-kicker">Education</span>
+            <h3>NIT Agartala</h3>
+            <p>B.Tech in Electrical Engineering • 2023 to 2027</p>
+            <p>CGPA: 8.26</p>
+          </div>
+          <div class="spotlight-card panel reveal">
+            <span class="spotlight-kicker">Highlights</span>
+            <h3>Momentum</h3>
+            <p>500+ DSA problems solved, 2025 Adobe India Hackathon Round 2, and two major hackathon finals.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="craft" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Craft stack</p>
+          <h2>Tools I reach for when the build needs both speed and structure.</h2>
+        </div>
+        <div class="skills-board">
+          <article class="skill-column panel reveal">
+            <h3>Frontend</h3>
+            <p>React, Next.js, Redux Toolkit, Tailwind CSS, HTML, CSS, JavaScript</p>
+          </article>
+          <article class="skill-column panel reveal">
+            <h3>Backend</h3>
+            <p>Node.js, Express.js, Go, REST APIs, JWT, Socket.io, Mongoose, Prisma</p>
+          </article>
+          <article class="skill-column panel reveal">
+            <h3>Data + Infra</h3>
+            <p>MongoDB, MySQL, PostgreSQL, Docker, Render, Vercel, GitHub, Postman</p>
+          </article>
+          <article class="skill-column panel reveal">
+            <h3>Core CS</h3>
+            <p>DSA, OOP, database design, system design, clean architecture, debugging</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section achievement-band panel reveal">
+        <p class="eyebrow">Achievements</p>
+        <div class="achievement-grid">
+          <div>
+            <strong>500+</strong>
+            <span>DSA problems solved across LeetCode, GeeksforGeeks, and Codeforces</span>
+          </div>
+          <div>
+            <strong>Top 300</strong>
+            <span>Out of 19,000+ teams in Odoo Hackathon 2025 finalist selection</span>
+          </div>
+          <div>
+            <strong>Round 2</strong>
+            <span>Selected from 250,000+ participants in Adobe India Hackathon 2025</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section panel">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build something ambitious and well-made.</h2>
+          <p>
+            I’m interested in software engineering roles, internships, and projects where product
+            quality matters as much as implementation depth.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:anjaliprajapati04@gmail.com">anjaliprajapati04@gmail.com</a>
+            <a href="https://github.com/anjalii40" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="assets/Anjali_Prajapati_Resume.pdf" download>Resume</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="mailto:anjaliprajapati04@gmail.com" method="post" enctype="text/plain">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>What are we building?</span>
+            <textarea name="message" rows="5" placeholder="Tell me about the role, product, or project." required></textarea>
+          </label>
+          <button class="button button-primary" type="submit">Start the conversation</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed and built by Anjali Prajapati.</p>
+      <p id="year-stamp"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

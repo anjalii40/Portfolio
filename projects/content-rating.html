@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Rating System | Anjali Prajapati</title>
+  <meta
+    name="description"
+    content="Case study for a content rating and recommendation system built with Go, PostgreSQL, and a six-tier progression model."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="case-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"></span>
+        <span>Anjali Prajapati</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        Menu
+      </button>
+      <nav id="nav-menu" class="nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <a class="back-link" href="../index.html">← Back to portfolio</a>
+
+      <section class="case-hero panel">
+        <div class="case-intro">
+          <span class="case-label">Backend architecture</span>
+          <h1>Content Rating System</h1>
+          <p>
+            This project focused on recommendation logic and backend structure. I designed a
+            rating pipeline that could classify and surface content using a six-tier progression
+            model inspired by codex-style recommendations.
+          </p>
+        </div>
+        <div class="case-side">
+          <div class="metric-stack">
+            <article class="metric-card panel">
+              <span class="case-label">Stack</span>
+              <p>Go, PostgreSQL, Next.js, TypeScript, Recharts, Docker, Render, Vercel</p>
+            </article>
+            <article class="metric-card panel">
+              <span class="case-label">Focus</span>
+              <p>Database modeling, API design, clean architecture, and reproducible deployments.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-grid">
+        <article class="case-block panel reveal">
+          <span class="case-label">Schema</span>
+          <p>
+            I designed a PostgreSQL schema with strong foreign key relationships, cascade deletes,
+            and performance-minded indexes so the data layer could stay robust as recommendation
+            queries expanded.
+          </p>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">API shape</span>
+          <p>
+            The backend used a clean handler → service → repository structure, which made it easier
+            to extend business logic without turning routing code into an unmaintainable bottleneck.
+          </p>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">Notable work</span>
+          <ul class="case-list">
+            <li>Six-tier progression model from newbie through grandmaster.</li>
+            <li>Versioned SQL schema setup for reproducible deployments.</li>
+            <li>RESTful endpoints with clear responsibility boundaries.</li>
+            <li>Frontend reporting via Next.js and Recharts.</li>
+          </ul>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">Takeaway</span>
+          <p>
+            Strong backend systems feel calm because the boundaries are clear. This project pushed
+            me to think more rigorously about data shape, service contracts, and long-term
+            maintainability.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Content Rating case study</p>
+      <p id="year-stamp"></p>
+    </footer>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

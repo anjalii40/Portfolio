@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeTrade | Anjali Prajapati</title>
+  <meta
+    name="description"
+    content="Case study for PrimeTrade, a secure task management platform with JWT auth, role controls, Swagger docs, and a polished operations dashboard."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="case-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark"></span>
+        <span>Anjali Prajapati</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        Menu
+      </button>
+      <nav id="nav-menu" class="nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <a class="back-link" href="../index.html">← Back to portfolio</a>
+
+      <section class="case-hero panel">
+        <div class="case-intro">
+          <span class="case-label">Backend + Product UI</span>
+          <h1>PrimeTrade</h1>
+          <p>
+            PrimeTrade is a secure task management platform designed as a full-stack assessment
+            build, but executed with product polish. The goal was to move beyond a basic CRUD app
+            and create something that felt deliberate in both architecture and interface quality.
+          </p>
+          <div class="case-actions">
+            <a class="button button-primary" href="https://github.com/anjalii40/Hiring-Assessment---Primetrade" target="_blank" rel="noreferrer">View repository</a>
+            <a class="button button-ghost" href="../index.html#contact">Contact me</a>
+          </div>
+        </div>
+
+        <div class="case-side">
+          <div class="metric-stack">
+            <article class="metric-card panel">
+              <span class="case-label">Stack</span>
+              <p>Node.js, Express, Prisma, PostgreSQL, JWT, Swagger, vanilla HTML/CSS/JS</p>
+            </article>
+            <article class="metric-card panel">
+              <span class="case-label">Focus</span>
+              <p>Authentication, RBAC, secure API design, pagination, and dashboard UX.</p>
+            </article>
+            <article class="metric-card panel">
+              <span class="case-label">Outcome</span>
+              <p>A deployable product with docs, admin controls, and a visually elevated frontend.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-grid">
+        <article class="case-block panel reveal">
+          <span class="case-label">Problem</span>
+          <h3>Make an assessment feel like a real product.</h3>
+          <p>
+            Most assessment dashboards stop at technical correctness. I wanted PrimeTrade to show
+            the same level of care in user flow, visual clarity, and operational ergonomics that a
+            product-facing engineering team would expect.
+          </p>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">Approach</span>
+          <h3>Layered architecture with strict responsibility boundaries.</h3>
+          <p>
+            The API was organized around routes, controllers, middleware, validators, and Prisma
+            access patterns. This kept concerns separated and made auth, validation, and admin
+            restrictions easy to reason about.
+          </p>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">Key decisions</span>
+          <ul class="case-list">
+            <li>JWT auth and bcrypt-based password hashing for secure access control.</li>
+            <li>Role-aware admin endpoints for user review and privilege updates.</li>
+            <li>Swagger documentation to improve API usability and evaluator experience.</li>
+            <li>Paginated task browsing with status filters and clean visual grouping.</li>
+          </ul>
+        </article>
+
+        <article class="case-block panel reveal">
+          <span class="case-label">What I learned</span>
+          <p>
+            PrimeTrade reinforced how much perceived product quality comes from the small things:
+            response consistency, intentional copy, strong default states, and UI decisions that
+            reduce ambiguity for users.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>PrimeTrade case study</p>
+      <p id="year-stamp"></p>
+    </footer>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
