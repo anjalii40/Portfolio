@@ -335,9 +335,9 @@ body.light-theme .desktop-metrics span {
 .menu-bar {
   position: relative;
   z-index: 8;
-  background: rgba(246, 249, 255, 0.18);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 0;
 }
 
 body.light-theme .menu-bar,
@@ -346,8 +346,8 @@ body.light-theme .lock-status {
 }
 
 body.light-theme .menu-bar {
-  background: rgba(255, 255, 255, 0.48);
-  border-bottom-color: rgba(92, 117, 154, 0.12);
+  background: transparent;
+  border-bottom-color: transparent;
 }
 
 .theme-toggle {
