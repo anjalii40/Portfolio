@@ -1548,13 +1548,33 @@ body.light-theme .desktop-icon span:last-child {
 }
 
 .terminal-titlebar {
+  position: relative;
+  z-index: 2;
   background: rgba(31, 36, 48, 0.92);
   border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.terminal-window .window-controls {
+  position: relative;
+  z-index: 3;
+}
+
+.terminal-window .window-control {
+  width: 13px;
+  height: 13px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 0 0 1px rgba(0, 0, 0, 0.28);
 }
 
 .terminal-window .window-title,
 .terminal-window .toolbar-pill {
   color: #d9e6ff;
+}
+
+.terminal-window .window-title {
+  font-weight: 700;
 }
 
 .terminal-window .toolbar-pill {
