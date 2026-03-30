@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
   <div class="site-shell">
     <header class="topbar">
       <a class="brand" href="#home">
@@ -38,7 +41,17 @@
       <section id="home" class="hero panel">
         <div class="hero-copy">
           <p class="eyebrow">Software Developer • Haridwar, India</p>
-          <h1>Building products that feel sharp, cinematic, and seriously usable.</h1>
+          <div class="hero-kicker-row">
+            <span class="hero-chip">Frontend feel</span>
+            <span class="hero-chip">Backend rigor</span>
+            <span class="hero-chip">Product instinct</span>
+          </div>
+          <h1>
+            Building products
+            <span>that feel sharp,</span>
+            cinematic,
+            <span>and seriously usable.</span>
+          </h1>
           <p class="hero-text">
             I design and ship developer-forward products across backend systems, real-time
             experiences, dashboards, and modern web interfaces. I care about clean architecture,
@@ -58,9 +71,10 @@
               <strong>Internships, SDE roles, and ambitious product builds</strong>
             </div>
           </div>
+          <a class="hero-mail" href="mailto:anjaliiprajapati04@gmail.com">anjaliiprajapati04@gmail.com</a>
         </div>
         <div class="hero-stage">
-          <div class="stage-card stage-card-large">
+          <div class="stage-card stage-card-large" data-parallax="0.18">
             <span class="stage-kicker">Featured build</span>
             <h2>PrimeTrade</h2>
             <p>
@@ -70,12 +84,12 @@
             <a href="projects/primetrade.html">Open case study</a>
           </div>
           <div class="stage-grid">
-            <div class="stage-card">
+            <div class="stage-card" data-parallax="0.12">
               <span class="stage-kicker">Realtime</span>
               <h3>Live Auction</h3>
               <p>Socket-powered bidding with race-condition-aware architecture.</p>
             </div>
-            <div class="stage-card">
+            <div class="stage-card" data-parallax="0.16">
               <span class="stage-kicker">Systems</span>
               <h3>Content Rating</h3>
               <p>Go + PostgreSQL pipeline with structured recommendation logic.</p>
@@ -110,6 +124,43 @@
           <span>Render</span>
           <span>Vercel</span>
           <span>Next.js</span>
+        </div>
+      </section>
+
+      <section class="section narrative">
+        <div class="narrative-intro">
+          <p class="eyebrow">Scroll story</p>
+          <h2>As the build gets deeper, the work gets more intentional.</h2>
+          <p>
+            I like portfolios that reveal character through rhythm, not just copy. So this section
+            maps how I think when a project needs engineering depth and visual energy at the same time.
+          </p>
+        </div>
+        <div class="narrative-stack">
+          <article class="narrative-card panel reveal" data-parallax="0.08">
+            <span class="narrative-index">01</span>
+            <h3>Start with the system.</h3>
+            <p>
+              I want the backend, data flow, and edge cases to make sense before the interface tries
+              to look impressive.
+            </p>
+          </article>
+          <article class="narrative-card panel reveal" data-parallax="0.12">
+            <span class="narrative-index">02</span>
+            <h3>Shape the interaction.</h3>
+            <p>
+              Then I design for pace: what should feel immediate, what should feel calm, and where
+              motion actually helps understanding.
+            </p>
+          </article>
+          <article class="narrative-card panel reveal" data-parallax="0.16">
+            <span class="narrative-index">03</span>
+            <h3>Polish the details.</h3>
+            <p>
+              The final layer is what makes a project memorable: better defaults, stronger copy,
+              cleaner states, and a little surprise while scrolling.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -295,13 +346,13 @@
             quality matters as much as implementation depth.
           </p>
           <div class="contact-links">
-            <a href="mailto:anjaliprajapati04@gmail.com">anjaliprajapati04@gmail.com</a>
+            <a href="mailto:anjaliiprajapati04@gmail.com">anjaliiprajapati04@gmail.com</a>
             <a href="https://github.com/anjalii40" target="_blank" rel="noreferrer">GitHub</a>
             <a href="assets/Anjali_Prajapati_Resume.pdf" download>Resume</a>
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:anjaliprajapati04@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="mailto:anjaliiprajapati04@gmail.com" method="post" enctype="text/plain">
           <label>
             <span>Name</span>
             <input type="text" name="name" placeholder="Your name" required />
